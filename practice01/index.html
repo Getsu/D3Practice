@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script> <!-- D3.jsのライブラリを読み込み -->
+  </head>
+  <body>
+    <script>
+      // d3.select("body").append("p").text("Hello!");
+      var dataset = [ 1, 2, 3, 4, 5 ];
+      d3.select("body").selectAll("p")
+      .data(dataset)  // データ数をカウントして解析
+      .enter()  // まだ無い要素を選択して追加するためのmethod
+      .append("p")  // enter() によって渡された参照場所を受け取り、"p"要素を挿入
+      .text(function(d) {
+        return "この値は" + d + "です。";
+      })  // data() 呼び出し後はdを入力値として使える
+      .style("color", function(d) {
+        if (d > 2) {
+          return "red";
+        } else {
+          return "black";
+        }
+      });
+      </script>
+  </body>
+</html>
