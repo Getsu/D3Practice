@@ -41,7 +41,7 @@ const xScale = d3
   .scaleBand()
   .rangeRound([padding, width - padding])
   .padding(0.2)
-  .domain(d3.range(dataset, length));
+  .domain(d3.range(dataset.length));
 const yScale = d3
   .scaleLinear()
   .domain([dataValueMin, dataValueMax])
